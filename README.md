@@ -10,6 +10,6 @@ This project have 7 shell commands developed in the python language with the hel
 6. wc
 7. cut
 
-Currently, the code for the wc and cut functions are yet to be added. The test files in the test folder is empty. 
+Currently, the code for the all the 7 functions are yet to be added. The test files in the test folder is ready for 5 commands except wc and cut commands. 
 
 Completed 2 testcases for all 5 commands using pytest, so that the functions in the helper file can be tested.
