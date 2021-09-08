@@ -16,4 +16,4 @@ if ARG_CNT == 2:
     filename = sys.argv[1]
     TEXT = readfile(filename)
 
-head(TEXT)
+print(head(TEXT))

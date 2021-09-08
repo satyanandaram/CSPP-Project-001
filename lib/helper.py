@@ -37,7 +37,7 @@ def tail(text, n_lines=10):
     if text:
         lines = text.splitlines()
         lines = lines[-n_lines:]
-        print("\n".join(lines))
+        return "\n".join(lines)
 
 def head(text, n_lines=10):
     """
@@ -46,7 +46,7 @@ def head(text, n_lines=10):
     if text:
         lines = text.splitlines()
         lines = lines[:n_lines]
-        print("\n".join(lines))
+        return "\n".join(lines)
 
 def readfile(filename):
     """

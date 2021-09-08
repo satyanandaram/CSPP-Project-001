@@ -16,4 +16,4 @@ if ARG_CNT == 2:
     filename = sys.argv[1]
     TEXT = readfile(filename)
 
-tail(TEXT)
+print(tail(TEXT))
