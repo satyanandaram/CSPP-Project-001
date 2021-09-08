@@ -18,17 +18,21 @@ def cat(text):
     """
         Implementing the cat command functionality by defining a function
     """
+    result = ""
     lines = text.splitlines()
     for i in range(len(lines)):
-        print(lines[i])
+        result += lines[i] + "\n"
+    return result[:-1]
 
 def tac(text):
     """
         Implementing the tac command functionality by defining a function
     """
+    result = ""
     lines = text.splitlines()
     for i in range(len(lines)-1, -1, -1):
-        print(lines[i])
+        result += lines[i] + "\n"
+    return result[:-1]
 
 def tail(text, n_lines=10):
     """

@@ -15,4 +15,4 @@ if ARG_CNT == 1:
 if ARG_CNT > 1:
     print(sys.argv[0], "doesn't handle more than one argument")
 
-cat(TEXT)
+print(cat(TEXT))

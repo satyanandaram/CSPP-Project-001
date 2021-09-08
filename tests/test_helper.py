@@ -34,3 +34,44 @@ error_result = "curl: unable to resolve host address http://www.googly.com"
 ])
 def test_curl(text, result):
     assert curl(text)[:50] == result[:50]
+
+test_case_1 = 'http://www.google.com google home page'
+test_case_2 = '''http://www.googly.com
+        http://www.google.com
+        error home page'''
+
+@pytest.mark.parametrize('text, result', [
+    (test_case_1, test_case_1), 
+    (test_case_2, test_case_2) 
+])
+def test_cat(text, result):
+    assert cat(text) == result
+
+test_case_1_result = "http://www.google.com google home page"
+test_case_2_result = """        error home page
+        http://www.google.com
+http://www.googly.com"""
+
+@pytest.mark.parametrize('text, result', [
+    (test_case_1, test_case_1_result), 
+    (test_case_2, test_case_2_result) 
+])
+def test_tac(text, result):
+    assert tac(text) == result
+
+
+test_case_2 = """1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15"""
+@pytest.mark.parametrize('text, result', [
+    (test_case_1, test_case_1), 
+    (test_case_2, """1\n2\n3\n4\n5\n6\n7\n8\n9\n10""") 
+])
+def test_head(text, result):
+    assert head(text) == result
+
+
+@pytest.mark.parametrize('text, result', [
+    (test_case_1, test_case_1), 
+    (test_case_2, """6\n7\n8\n9\n10\n11\n12\n13\n14\n15""") 
+])
+def test_tail(text, result):
+    assert tail(text) == result
