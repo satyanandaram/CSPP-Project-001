@@ -12,4 +12,4 @@ if len(sys.argv) == 2:
     url = sys.argv[1]
     if 'http' not in url[:5]:
         url = "http://"+url
-    curl(url)
+    print(curl(url))

@@ -10,9 +10,9 @@ def curl(url):
     """
     try:
         response = requests.get(url)
-        print(response.content)
+        return response.text
     except:
-        print("curl: unable to resolve host address", url)
+        return "curl: unable to resolve host address " + url
 
 def cat(text):
     """
