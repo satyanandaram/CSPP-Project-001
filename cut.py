@@ -1,40 +1,25 @@
+"""
+create a new variable file and read the contents of the file
+and assign it to a variable "file" In order to read the contents
+of the file we are making use of the
+"""
 import sys
-# create a new variable file and read the contents of the file and assign it to a variable "file"
-# In order to read the  contents of the file we are making use of the 
-
-def cut(fileContent, cols, delim="\t"):
-    lst = fileContent.split("\n")
-    for i in lst:
-        for j in cols:
-            if int(j) > len(i.split(delim)):
-                continue
-            print(i.split(delim)[int(j)-1],end=delim)
-        print()
+from lib.helper import is_valid_file, cut
 
 
-def isValidFile():
-    try:
-        file= open(sys.argv[-1], "r")
-        file.close()
-        return True
-    except:
-        print("cut: "+sys.argv[-1]+": No such file or directory")
-        return False
-
-
-flag=True
-nums=[]
-for argNum in range(1,len(sys.argv)):
+FLAG = True
+nums = []
+for argNum in range(1, len(sys.argv)):
     nums += sys.argv[argNum].split(",")
 
 if ".tsv" in nums[-1]:
-    flag = isValidFile()
+    FLAG = is_valid_file()
     nums.pop()
 
 
 if '0' in nums:
     print("cut: fields are numbered from 1")
-    flag = False
+    FLAG = False
 
 else:
     columns = []
@@ -43,14 +28,14 @@ else:
             elem = int(i)
             columns.append(elem)
         except:
-            flag = False
+            FLAG = False
             print("cut: invalid field value "+i)
             break
 
-if (flag):
+if FLAG:
     try:
-        file = open(sys.argv[-1], "r")
-        fileContent = file.read()
+        file_pointer = open(sys.argv[-1], "r")
+        TEXT = file_pointer.read()
     except:
-        fileContent = sys.stdin.read()
-    cut(fileContent,columns)
+        TEXT = sys.stdin.read()
+    cut(TEXT, columns)

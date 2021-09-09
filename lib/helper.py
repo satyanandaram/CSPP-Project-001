@@ -1,5 +1,6 @@
 """Implementing the helper functions in python."""
 
+import sys
 import requests
 
 def curl(url):
@@ -90,6 +91,31 @@ def byte_counts(text):
         returns the count of bytes a given file
     """
     return len(text.encode('utf-8'))
+
+def cut(text, cols, delim="\t"):
+    """
+        Implementing the cut command functionality by defining a function
+    """
+    lines = text.split("\n")
+    for line in lines:
+        for j in cols:
+            if int(j) > len(line.split(delim)):
+                continue
+            print(line.split(delim)[int(j)-1], end=delim)
+        print()
+
+
+def is_valid_file():
+    """
+        Check the file validations
+    """
+    try:
+        file = open(sys.argv[-1], "r")
+        file.close()
+        return True
+    except:
+        print("cut: "+sys.argv[-1]+": No such file or directory")
+        return False
 
 def readfile(filename):
     """
