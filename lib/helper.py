@@ -52,6 +52,29 @@ def head(text, n_lines=10):
         lines = lines[:n_lines]
         return "\n".join(lines)
 
+def wc(file_data):
+    """will create a function of wc which takes file_data(i.e., content of the entire file) 
+    as a parameter"""
+    word_count = word_counts(file_data)
+    char_count = char_counts(file_data)
+    line_count = line_counts(file_data)
+    byte_count = byte_counts(file_data)
+    return(line_count,word_count, byte_count,char_count)
+
+def word_counts(file_data): 
+    list_of_words = file_data.split()
+    return len(list_of_words)
+
+def line_counts(file_data):
+    list_of_lines = file_data.split("\n")
+    return len(list_of_lines) - 1
+
+def char_counts(file_data):
+    return len(file_data)
+
+def byte_counts(s):
+    return len(s.encode('utf-8'))
+
 def readfile(filename):
     """
         Reading the contents of a given file
