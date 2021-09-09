@@ -1,15 +1,17 @@
-import sys,os
+"""Implementing the wc shell command in python."""
+
+import sys
 
 from lib.helper import wc
 
 if len(sys.argv) == 1:
     value = sys.stdin.read()
     for i in wc(value)[:3]:
-        print(i,end=" ")
+        print(i, end=" ")
     print()
 else:
     try:
-        open_file = open(sys.argv[1],'r')    
+        open_file = open(sys.argv[1], 'r')
         for i in wc(open_file.read())[:3]:
             print(i, end=" ")
         print(sys.argv[1])
