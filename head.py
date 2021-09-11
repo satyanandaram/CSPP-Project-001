@@ -14,6 +14,6 @@ if ARG_CNT == 1:
     TEXT = readfile(filename)
 
 if ARG_CNT > 1:
-    print("Usage: tail.py <file>")
+    print("Usage: head.py <file>")
 
 print(head(TEXT))

@@ -1,6 +1,4 @@
-"""
-    The python code helps to read the command line input for curl method.
-"""
+"""The python code helps to read the command line input for curl method."""
 
 import sys
 from lib.helper import curl
