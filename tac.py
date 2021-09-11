@@ -10,7 +10,8 @@ if ARG_CNT == 0:
     TEXT = sys.stdin.read()
 
 if ARG_CNT == 1:
-    TEXT = readfile(sys.argv[1])
+    filename = sys.argv[1]
+    TEXT = readfile(filename)
 
 if ARG_CNT > 1:
     print(sys.argv[0], "doesn't handle more than one argument")
