@@ -3,7 +3,7 @@
 import sys
 from lib.helper import tac, readfile
 
-TEXT = ""
+TEXT = None
 ARG_CNT = len(sys.argv) - 1
 
 if ARG_CNT == 0:
