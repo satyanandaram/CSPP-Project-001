@@ -2,18 +2,17 @@
 
 import sys
 
-from lib.helper import wc
+from lib.helper import wc, readfile
 
-if len(sys.argv) == 1:
-    value = sys.stdin.read()
-    for i in wc(value)[:3]:
-        print(i, end=" ")
-    print()
-else:
-    try:
-        open_file = open(sys.argv[1], 'r')
-        for i in wc(open_file.read())[:3]:
-            print(i, end=" ")
-        print(sys.argv[1])
-    except FileNotFoundError:
-        print("wc: No such file or directory")
+TEXT = None
+ARG_CNT = len(sys.argv) - 1
+
+if ARG_CNT == 0:
+    TEXT = sys.stdin.read()
+
+if ARG_CNT == 1:
+    filename = sys.argv[1]
+    TEXT = readfile(filename)
+
+response = wc(TEXT)
+print(" " + str(response[0]) + "  " + str(response[1]) + " " + str(response[2]))

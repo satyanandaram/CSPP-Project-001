@@ -64,7 +64,7 @@ def wc(text):
     char_count = char_counts(text)
     line_count = line_counts(text)
     byte_count = byte_counts(text)
-    return(line_count, word_count, byte_count, char_count)
+    return [line_count, word_count, byte_count, char_count]
 
 def word_counts(text):
     """
