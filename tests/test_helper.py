@@ -75,3 +75,11 @@ def test_head(text, result):
 ])
 def test_tail(text, result):
     assert tail(text) == result
+
+@pytest.mark.parametrize('text, result', [
+    ("hello\n", [1, 1, 6, 6]), 
+    ("hello world\n", [1, 2, 12, 12]) 
+])
+def test_wc(text, result):
+    assert wc(text) == result
+
