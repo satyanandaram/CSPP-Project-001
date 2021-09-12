@@ -18,5 +18,3 @@ if ARG_CNT > 1:
 
 print(cat(TEXT))
 
-
-# Code reviewed by deepak
