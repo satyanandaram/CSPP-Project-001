@@ -17,3 +17,6 @@ if ARG_CNT > 1:
     print(sys.argv[0], "doesn't handle more than one argument")
 
 print(cat(TEXT))
+
+
+# Code reviewed by deepak
