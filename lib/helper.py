@@ -92,18 +92,6 @@ def byte_counts(text):
     """
     return len(text.encode('utf-8'))
 
-def cut(text, cols, delim="\t"):
-    """
-        Implementing the cut command functionality by defining a function
-    """
-    lines = text.split("\n")
-    for line in lines:
-        for j in cols:
-            if int(j) > len(line.split(delim)):
-                continue
-            print(line.split(delim)[int(j)-1], end=delim)
-        print()
-
 
 def is_valid_file():
     """
