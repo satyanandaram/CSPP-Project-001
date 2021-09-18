@@ -93,18 +93,6 @@ def byte_counts(text):
     return len(text.encode('utf-8'))
 
 
-def is_valid_file():
-    """
-        Check the file validations
-    """
-    try:
-        file = open(sys.argv[-1], "r")
-        file.close()
-        return True
-    except:
-        print("cut: "+sys.argv[-1]+": No such file or directory")
-        return False
-
 def readfile(filename):
     """
         Reading the contents of a given file
