@@ -39,3 +39,4 @@ if FLAG:
     except:
         TEXT = sys.stdin.read()
     cut(TEXT, columns)
+
